@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SecureBank Register</title>
+</head>
+<body>
+    <h2>📝 Register New User</h2>
+
+    {% if message %}
+        <p style="color:green;">{{ message }}</p>
+    {% endif %}
+
+    <form method="POST" action="/register">
+        Username: <input type="text" name="username" required><br><br>
+        Password: <input type="password" name="password" required><br><br>
+        <input type="submit" value="Register">
+    </form>
+
+    <p>Already registered? <a href="/">Login here</a></p>
+</body>
+</html>

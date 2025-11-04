@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, {{ user }}</h2>
+    <form action="/transaction" method="POST">
+        Amount: <input type="number" name="amount" required>
+        <button type="submit">Send Transaction</button>
+    </form>
+</body>
+</html>

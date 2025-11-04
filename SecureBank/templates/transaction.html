@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SecureBank Transaction</title>
+</head>
+<body>
+    <h2>💸 Make a Secure Transaction</h2>
+
+    {% if result %}
+        <div style="border:1px solid green; padding:10px; margin-bottom:20px;">
+            <p>✅ Transaction Successful!</p>
+            <p>From: {{ result.sender }}</p>
+            <p>To: {{ result.receiver }}</p>
+            <p>Amount: ₹{{ result.amount }}</p>
+            <p><b>Transaction Signature (HMAC):</b> {{ result.signature }}</p>
+        </div>
+    {% endif %}
+
+    <form method="POST">
+        Receiver Username: <input type="text" name="receiver" required><br><br>
+        Amount (₹): <input type="number" name="amount" required><br><br>
+        <input type="submit" value="Send Money">
+    </form>
+
+    <p><a href="/dashboard">Back to Dashboard</a></p>
+</body>
+</html>
